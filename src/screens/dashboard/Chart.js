@@ -60,8 +60,18 @@ export default function Chart() {
       <Title>Current Month</Title>
       <ResponsiveContainer>
         <LineChart width={500} height={300} data={formattedSalesData}>
-          <XAxis dataKey="date" />
-          <YAxis />
+          <XAxis
+            dataKey="date"
+            label={{ value: "Date", position: "insideBottomRight", offset: 0 }}
+          />
+          <YAxis
+            label={{
+              value: "Sales",
+              angle: -90,
+              position: "insideLeft",
+              offset: 10,
+            }}
+          />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
           <Line type="monotone" dataKey="sales" stroke="#8884d8" />
